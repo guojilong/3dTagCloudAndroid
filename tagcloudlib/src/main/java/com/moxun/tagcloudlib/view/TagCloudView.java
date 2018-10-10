@@ -200,7 +200,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 centerY = (getBottom() - getTop() - getPaddingTop() - getPaddingBottom()) / 2;
                 radius = Math.min(centerX * radiusPercent, centerY * radiusPercent);
                 mTagCloud.setRadius((int) radius);
-                mTagCloud.setRatio(centerX * 1.0f / centerY);
+                mTagCloud.setRatio(centerX * 1.5f / centerY);
 
                 mTagCloud.setTagColorLight(lightColor);//higher color
                 mTagCloud.setTagColorDark(darkColor);//lower color
@@ -365,9 +365,9 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 float dx = e.getX() - downX;
                 float dy = e.getY() - downY;
                 if (isValidMove(dx, dy)) {
-                    float max = Math.max(Math.abs(dx), Math.abs(dy)) / 8;
-                    mAngleX = (dy / radius) * TOUCH_SCALE_FACTOR;
-                    mAngleY = (-dx / radius) * TOUCH_SCALE_FACTOR;
+                    float max = Math.max(Math.abs(dx), Math.abs(dy)) / 4;
+                    mAngleX = (dy / max) * speed * TOUCH_SCALE_FACTOR;
+                    mAngleY = (-dx / max) * speed * TOUCH_SCALE_FACTOR;
 
                     processTouch();
                 }
@@ -447,7 +447,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
             processTouch();
         }
 
-        handler.postDelayed(this, 50);
+        handler.postDelayed(this, 20);
     }
 
     public void setOnTagClickListener(OnTagClickListener listener) {
