@@ -433,12 +433,12 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
 
 
                 if (Math.abs(mLastAngleX - mAngleX) > Math.abs(mAngleX) / 10) {
-                    mAngleX += (mLastAngleX - mAngleX) / 20;
+                    mAngleX += (mLastAngleX - mAngleX) / 10;
                 }
 
 
                 if (Math.abs(mLastAngleY - mAngleY) > Math.abs(mAngleY) / 10) {
-                    mAngleY += (mLastAngleY - mAngleY) / 20;
+                    mAngleY += (mLastAngleY - mAngleY) / 10;
                 }
 
 
@@ -447,7 +447,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
             processTouch();
         }
 
-        handler.postDelayed(this, 20);
+        handler.postDelayed(this, 10);
     }
 
     public void setOnTagClickListener(OnTagClickListener listener) {
