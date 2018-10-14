@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tagCloudView = (TagCloudView) findViewById(R.id.tag_cloud);
 
-        textTagsAdapter = new TextTagsAdapter(new String[10]);
+        textTagsAdapter = new TextTagsAdapter(new String[12]);
         viewTagsAdapter = new ViewTagsAdapter();
         vectorTagsAdapter = new VectorTagsAdapter();
 

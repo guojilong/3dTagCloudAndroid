@@ -46,7 +46,7 @@ public class TextTagsAdapter extends TagsAdapter {
         tv.setPadding(10,10,10,10);
         tv.setText("OK失望 v 吧No." + position);
         tv.setGravity(Gravity.CENTER);
-        tv.setTextColor(Color.WHITE);
+        tv.setTextColor(context.getResources().getColor(R.color.tagColor));
 
         return tv;
     }

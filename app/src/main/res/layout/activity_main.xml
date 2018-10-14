@@ -32,7 +32,7 @@
         android:id="@+id/tag_cloud"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#f55a00"
+        android:background="#f5e9db"
         app:autoScrollMode="uniform"
         app:darkColor="@color/tagDark"
         app:lightColor="@color/tagLight"
