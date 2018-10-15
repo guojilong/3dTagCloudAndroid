@@ -365,7 +365,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 float dx = e.getX() - downX;
                 float dy = e.getY() - downY;
                 if (isValidMove(dx, dy)) {
-                    float max = (float) (Math.sqrt(dx*dx+dy*dy)/2);
+                    float max = Math.max(Math.abs(dx), Math.abs(dy))/8;
                     mAngleX = (dy / max) * speed * TOUCH_SCALE_FACTOR;
                     mAngleY = (-dx / max) * speed * TOUCH_SCALE_FACTOR/2;
 
@@ -432,14 +432,14 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
             if (mode == MODE_UNIFORM) {
 
 
-//                if (Math.abs(mLastAngleX - mAngleX) > Math.abs(mAngleX) / 10) {
-//                    mAngleX += (mLastAngleX - mAngleX) / 10;
-//                }
-//
-//
-//                if (Math.abs(mLastAngleY - mAngleY) > Math.abs(mAngleY) / 10) {
-//                    mAngleY += (mLastAngleY - mAngleY) / 10;
-//                }
+                if (Math.abs(mLastAngleX - mAngleX) > Math.abs(mAngleX) / 10) {
+                    mAngleX += (mLastAngleX - mAngleX) / 10;
+                }
+
+
+                if (Math.abs(mLastAngleY - mAngleY) > Math.abs(mAngleY) / 10) {
+                    mAngleY += (mLastAngleY - mAngleY) / 10;
+                }
 
 
             }
