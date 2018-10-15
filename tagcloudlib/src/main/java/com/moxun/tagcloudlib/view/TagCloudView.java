@@ -367,7 +367,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 if (isValidMove(dx, dy)) {
                     float max = Math.max(Math.abs(dx), Math.abs(dy))/8;
                     mAngleX = (dy / max) * speed * TOUCH_SCALE_FACTOR;
-                    mAngleY = (-dx / max) * speed * TOUCH_SCALE_FACTOR/2;
+                    mAngleY = (-dx / max) * speed * TOUCH_SCALE_FACTOR;
 
                     processTouch();
                 }
