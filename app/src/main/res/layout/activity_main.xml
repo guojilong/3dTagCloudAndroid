@@ -39,7 +39,7 @@
         app:startAngleX="0.1"
         app:startAngleY="0.1"
         app:radiusPercent="0.6"
-        app:scrollSpeed="0.3" />
+        app:scrollSpeed="0.2" />
 
     <Button
         android:id="@+id/tag_text"
